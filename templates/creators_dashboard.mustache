@@ -1,0 +1,71 @@
+{{!
+  This file is part of Moodle - http://moodle.org/
+
+  Moodle is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Moodle is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+  @template lytix_config/creators_dashboard
+
+  Lytix Creators Dashboard view.
+
+  The purpose of this template is to show the creator’s dashboard.
+
+  Classes required for JS:
+  * lytix_actions/actions
+  * lytix_completions/activity_completion
+  * lytix_coursecompl/course_completion
+  * lytix_participations/participations
+  * lytix_timeoverview/timeoverview
+
+  Data attributes required for JS:
+  * none
+
+  Context variables required for this template:
+  * contextid
+  * courseid
+  * userid
+  * locale
+
+  Example context (json):
+  {
+      "contextid": 0,
+      "courseid": 0,
+      "userid": 0,
+      "locale": "de_AT.UTF-8"
+  }
+
+}}
+
+{{!
+    The partials are wrapped in <div>s to be consistent with the other dashboard templates.
+    As this dashboard has a special layout compared to the others anyway, we might ditch the
+    otherwise useless wrappers (this has to be reflected in the CSS).
+}}
+
+<div id="lytix" class="row px-4">
+    <section id="overview" class='w-100 mb-5'>
+        <h2 class='mb-5'>{{#str}} overview_heading, local_lytix {{/str}}</h2>
+        <div class="widgets d-flex flex-wrap">
+            <div>{{> lytix_coursecompl/widget }}</div>
+            <div>{{> lytix_participations/widget }}</div>
+            <div>{{> lytix_timeoverview/widget }}</div>
+        </div>
+    </section>
+    <section id='details' class='w-100'>
+        <h2 class='mb-5'>{{#str}} details_heading, local_lytix {{/str}} </h2>
+        <div class='mb-4'>{{> lytix_completions/widget }}</div>
+        <div class='mb-1'>{{> lytix_actions/widget }}</div>
+    </section>
+</div>
+{{> lytix_config/unload }}
