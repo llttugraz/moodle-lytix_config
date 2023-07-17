@@ -65,6 +65,7 @@ jobs:
       - name: Install moodle-plugin-ci
         run: |
           moodle-plugin-ci add-plugin --branch main llttugraz/moodle-local_lytix
+          moodle-plugin-ci add-plugin --branch main llttugraz/moodle-lytix_helper
           moodle-plugin-ci add-plugin --branch main llttugraz/moodle-lytix_logs
           moodle-plugin-ci install --plugin ./plugin --db-host=127.0.0.1
         env:
