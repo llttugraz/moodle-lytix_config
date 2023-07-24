@@ -82,8 +82,7 @@ class render_view_test extends \advanced_testcase {
      * @return void
      * @throws \coding_exception
      */
-    public function check_installed_plugins(array $plugins): void
-    {
+    public function check_installed_plugins(array $plugins): void {
         foreach ($plugins as $plugin) {
             if (!plugin_check::is_installed($plugin)) {
                 $this->markTestSkipped('Some required Lytix-plugins are not installed!');
