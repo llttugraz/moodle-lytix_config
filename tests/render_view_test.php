@@ -25,7 +25,7 @@
 
 namespace lytix_config;
 
-use lytix_config\render_view;
+use local_lytix\helper\plugin_check;
 
 /**
  * Test local courselist privacy provider.
@@ -56,6 +56,40 @@ class render_view_test extends \advanced_testcase {
      * @var \stdClass|null
      */
     private $creator = null;
+
+    /**
+     * Lytix plugins variable.
+     * @var string[]
+     */
+    private $plugins_learners_corner = ['planner, grademonitor, activity, timeoverview, diary'];
+
+    /**
+     * Lytix plugins variable.
+     * @var string[]
+     */
+    private $plugins_course_dashboard = ['planner, measure, activity, timeoverview, diary, completions'];
+
+    /**
+     * Lytix plugins variable.
+     * @var string[]
+     */
+    private $plugins_creators_dashboard = ['actions, completions, coursecompl, participations, timeoverview'];
+
+
+    /**
+     * Helper function to skip tests if plugins are not installed.
+     * @param array $plugins
+     * @return void
+     * @throws \coding_exception
+     */
+    public function check_installed_plugins(array $plugins): void
+    {
+        foreach ($plugins as $plugin) {
+            if (!plugin_check::is_installed($plugin)) {
+                $this->markTestSkipped('Some required Lytix-plugins are not installed!');
+            }
+        }
+    }
 
     /**
      * Sets up course for tests.
@@ -100,6 +134,7 @@ class render_view_test extends \advanced_testcase {
      */
     public function test_render_learners_corner_student_view() {
         $this->resetAfterTest();
+        $this->check_installed_plugins($this->plugins_learners_corner);
 
         // Set platform.
         set_config('platform', 'learners_corner', 'local_lytix');
@@ -124,6 +159,7 @@ class render_view_test extends \advanced_testcase {
      */
     public function test_render_learners_corner_teacher_view() {
         $this->resetAfterTest();
+        $this->check_installed_plugins($this->plugins_learners_corner);
 
         // Set platform.
         set_config('platform', 'learners_corner', 'local_lytix');
@@ -147,6 +183,7 @@ class render_view_test extends \advanced_testcase {
      */
     public function test_render_course_dashboard_student_view() {
         $this->resetAfterTest();
+        $this->check_installed_plugins($this->plugins_course_dashboard);
 
         // Set platform.
         set_config('platform', 'course_dashboard', 'local_lytix');
@@ -170,6 +207,7 @@ class render_view_test extends \advanced_testcase {
      */
     public function test_render_course_dashboard_teacher_view() {
         $this->resetAfterTest();
+        $this->check_installed_plugins($this->plugins_course_dashboard);
 
         // Set platform.
         set_config('platform', 'course_dashboard', 'local_lytix');
@@ -194,7 +232,7 @@ class render_view_test extends \advanced_testcase {
      */
     public function test_render_creators_dashboard_view() {
         $this->resetAfterTest();
-
+        $this->check_installed_plugins($this->plugins_creators_dashboard);
         // Set platform.
         set_config('platform', 'creators_dashboard', 'local_lytix');
 
