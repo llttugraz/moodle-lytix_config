@@ -1,5 +1,5 @@
 {
-    "name": "llttugraz/moodle-lytix_config",
+    "name": "llttugraz/lytix_config",
     "description": "Plugin with helper functions needed in several subplugins. It also serves to differt Lytix on several platforms.",
     "keywords": [
         "moodle",
