@@ -68,4 +68,14 @@
         <div class='mb-1'>{{> lytix_actions/widget }}</div>
     </section>
 </div>
+{{!
+    TODO: Once Moodle upgrades Bootstrap to version 5, we have to adapt below JS snippet. 
+    - https://tracker.moodle.org/browse/MDL-71979
+    - https://getbootstrap.com/docs/5.1/components/tooltips (do not just copy the convoluted example!)
+}}
+{{#js}}
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+{{/js}}
 {{> lytix_config/unload }}
