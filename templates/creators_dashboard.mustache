@@ -53,17 +53,19 @@
     otherwise useless wrappers (this has to be reflected in the CSS).
 }}
 
-<div id="lytix" class="row px-4">
-    <section id="overview" class='w-100 mb-5'>
-        <h2 class='mb-5'>{{#str}} overview_heading, local_lytix {{/str}}</h2>
-        <div class="widgets d-flex flex-wrap">
+<div id='lytix' class='px-4'>
+    <h2>{{#str}} creators_dashboard, local_lytix {{/str}}</h2>
+    <p class='font-italic mb-5'>{{#str}} cd_desc, local_lytix {{/str}}</p>
+    <section id='overview' class='w-100 mb-5'>
+        <h3 class='font-weight-bold mb-4 pb-1'>{{#str}} overview_heading, local_lytix {{/str}}</h3>
+        <div class='widgets d-flex flex-wrap'>
             <div>{{> lytix_coursecompl/widget }}</div>
             <div>{{> lytix_participations/widget }}</div>
             <div>{{> lytix_timeoverview/widget }}</div>
         </div>
     </section>
     <section id='details' class='w-100'>
-        <h2 class='mb-5'>{{#str}} details_heading, local_lytix {{/str}} </h2>
+        <h3 class='font-weight-bold mb-4 pb-1'>{{#str}} details_heading, local_lytix {{/str}} </h3>
         <div class='mb-4'>{{> lytix_completions/widget }}</div>
         <div class='mb-1'>{{> lytix_actions/widget }}</div>
     </section>
