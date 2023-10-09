@@ -71,6 +71,7 @@ class render_learners_corner {
             'isteacher' => $isteacher,
             'locale' => moodle_getlocale(),
             'showgrademonitor' => $showgrademonitor,
+            'widgetheading' => 3,
         ];
     }
 }
