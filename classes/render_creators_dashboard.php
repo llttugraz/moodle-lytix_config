@@ -65,6 +65,7 @@ class render_creators_dashboard {
             'userid' => $user->id,
             'iscreator' => $iscreator,
             'locale' => moodle_getlocale(),
+            'widgetheading' => 4,
         ];
     }
 }
