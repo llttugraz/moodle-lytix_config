@@ -22,7 +22,7 @@
  *
  * @package    lytix_config
  * @author     Guenther Moser
- * @copyright  2021 Educational Technologies, Graz, University of Technology
+ * @copyright  2023 Educational Technologies, Graz, University of Technology
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
