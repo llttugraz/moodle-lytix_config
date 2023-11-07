@@ -1,22 +1,98 @@
-# lytix_config
+# lytix\_config
 
-#### Overview
+This plugin is a subplugin of [local_lytix](https://github.com/llttugraz/moodle-local_lytix).
 The `lytix_config` plugin allows configuration of the main module, enabling it to work in combination with various sub-modules across different Moodle instances.
 
-#### Features
+## Table of Contents
 
-##### Subplugin Integration
+- [Installation](#installation)
+- [Requirements](#requirements)
+- [Features](#features)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Dependencies](#dependencies)
+- [API Documentation](#api-documentation)
+- [Subplugins](#subplugins)
+- [Privacy](#privacy)
+- [FAQ](#faq)
+- [Known Issues](#known-issues)
+- [Changelog](#changelog)
+- [License](#license)
+- [Contributors](#contributors)
+
+## Installation
+
+1. Download the plugin and extract the files.
+2. Move the extracted folder to your `moodle/local/lytix/modules` directory.
+3. Log in as an admin in Moodle and navigate to `Site Administration > Plugins > Install plugins`.
+4. Follow the on-screen instructions to complete the installation.
+
+## Requirements
+
+- Moodle Version: 4.1+
+- PHP Version: 7.4+
+- Supported Databases: MariaDB, PostgreSQL
+- Supported Moodle Themes: Boost
+
+## Features
+
 - `lytix_config` uses a specific template for different platforms to ensure seamless integration with the sub-modules.
+- The template for the Creators Dashboard is not availabe for the public because of dependecies to 3d party plugins.
 - Based on the chosen dashboard version in the admin settings, the appropriate Mustache template is loaded.
 
-##### Error Checking
-- If the required sub-plugins are not installed, the user will receive an error message when trying to open a course's dashboard.
+## Configuration
 
-#### Requirements
-- The main module and relevant sub-modules should be correctly installed and configured.
-- Regularly checking for updates for the plugin and associated sub-modules is recommended to avoid compatibility issues.
+Describe here how to configure the plugin after installation, including available settings and how to adjust them.
 
-#### Installation and Configuration
-1. Download the plugin and install it on your Moodle instance.
-2. Navigate to the admin settings and select the desired dashboard version.
-3. Verify the integration with the sub-modules and update them if necessary.
+## Usage
+
+Explain how to use the plugin with step-by-step instructions and provide screenshots if they help clarify the process.
+
+## Dependencies
+
+- [local_lytix](https://github.com/llttugraz/moodle-local_lytix).
+- [lytix_config](https://github.com/llttugraz/moodle-lytix_config).
+- [lytix_logs](https://github.com/llttugraz/moodle-lytix_logs).
+
+## API Documentation
+
+If your plugin offers API endpoints, document what they return and how to use them here.
+
+## Subplugins
+
+If there are any subplugins, provide links and descriptions for each.
+
+## Privacy
+
+Detail what personal data the plugin stores and how it handles this data.
+
+## FAQ
+
+**Q:** Frequently asked question here?
+**A:** Answer to the question here.
+
+**Q:** Another frequently asked question?
+**A:** Answer to the question here.
+
+## Known Issues
+
+- Issue 1: Solution or workaround for the issue.
+- Issue 2: Solution or workaround for the issue.
+
+## Changelog
+
+### Version v1.0.8
+
+- Release of the plugin for Moodle 4.2 and 4.3.
+- removed lytix_grademonitor completly.
+- several changes needed for other plugins.
+
+## License
+
+This plugin is licensed under the [GNU GPL v3](LINK_TO_LICENSE).
+
+## Contributors
+
+- **Günther Moser** - Developer - [GitHub](LINK_TO_GITHUB_PROFILE)
+- **Alex Kremser** - Developer - [GitHub](LINK_TO_GITHUB_PROFILE)
+

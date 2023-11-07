@@ -61,7 +61,7 @@ class render_view_test extends \advanced_testcase {
      * Lytix plugins variable.
      * @var string[]
      */
-    private $pluginslearnerscorner = ['planner, grademonitor, activity, timeoverview, diary'];
+    private $pluginslearnerscorner = ['planner, activity, timeoverview, diary'];
 
     /**
      * Lytix plugins variable.

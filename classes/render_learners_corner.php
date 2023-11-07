@@ -61,7 +61,6 @@ class render_learners_corner {
         $context = context_course::instance($course->id);
         $isstudent = render_view::is_student($context, $user->id);
         $isteacher = render_view::is_teacher($context, $user->id);
-        $showgrademonitor = course_settings::is_grade_monitor_enabled($course->id);
 
         return [
             'contextid' => $context->id,
@@ -70,7 +69,7 @@ class render_learners_corner {
             'isstudent' => $isstudent,
             'isteacher' => $isteacher,
             'locale' => moodle_getlocale(),
-            'showgrademonitor' => $showgrademonitor,
+            'showgrademonitor' => false,
             'widgetheading' => 3,
         ];
     }
