@@ -24,8 +24,5 @@
  */
 
 $string['pluginname'] = 'Lytix Config';
-
 $string['privacy:metadata'] = 'This plugin does not store any data.';
-
-// Privacy.
 $string['privacy:nullproviderreason'] = 'This plugin has no database to store user information. It only uses APIs in mod_assign to help with displaying the grading interface.';
