@@ -29,9 +29,6 @@
 namespace lytix_config;
 
 use context_course;
-use lytix_helper\course_settings;
-use lytix_planner\notification_settings;
-
 
 /**
  * Render class for the Learner's Corner.
