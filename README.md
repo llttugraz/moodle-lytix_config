@@ -13,7 +13,7 @@ The `lytix_config` module handles the configuration of the main plugin, enabling
 ## Requirements
 
 - Supported Moodle Version: 4.1 - 4.5
-- Supported PHP Version:    7.4 - 8.2
+- Supported PHP Version:    7.4 - 8.3
 - Supported Databases:      MariaDB, PostgreSQL
 - Supported Moodle Themes:  Boost
 
