@@ -32,7 +32,7 @@ use local_lytix\helper\plugin_check;
  *
  * @coversDefaultClass  \lytix_config\render_view
  */
-class render_view_test extends \advanced_testcase {
+final class render_view_test extends \advanced_testcase {
     /**
      * Course variable.
      * @var \stdClass|null
@@ -95,6 +95,7 @@ class render_view_test extends \advanced_testcase {
      */
     public function setUp(): void {
         global $DB;
+        parent::setUp();
         $this->resetAfterTest(true);
         $this->setAdminUser();
         $now = new \DateTime('now');
@@ -102,18 +103,18 @@ class render_view_test extends \advanced_testcase {
         // Create course.
         $this->course = $this->getDataGenerator()->create_course(['enablecompletion' => 1]);
         // Create Student and enrol to course.
-        $studentrole = $DB->get_record('role', array('shortname' => 'student'));
+        $studentrole = $DB->get_record('role', ['shortname' => 'student']);
         $this->student = $this->getDataGenerator()->create_user();
         $this->getDataGenerator()->enrol_user($this->student->id, $this->course->id, $studentrole->id);
         // Create Teacher and enrol to course.
-        $teacherrole = $DB->get_record('role', array('shortname' => 'editingteacher'));
+        $teacherrole = $DB->get_record('role', ['shortname' => 'editingteacher']);
         $this->teacher = $this->getDataGenerator()->create_user();
         $this->getDataGenerator()->enrol_user($this->teacher->id, $this->course->id, $teacherrole->id);
         // Create Creator and enrol to course.
         $this->creator = $this->getDataGenerator()->create_user();
-        $creatorrole = $DB->get_record('role', array('shortname' => 'manager'));
+        $creatorrole = $DB->get_record('role', ['shortname' => 'manager']);
         $this->getDataGenerator()->enrol_user($this->creator->id, $this->course->id, $creatorrole->id);
-        $creatorrole = $DB->get_record('role', array('shortname' => 'coursecreator'));
+        $creatorrole = $DB->get_record('role', ['shortname' => 'coursecreator']);
         $this->getDataGenerator()->enrol_user($this->creator->id, $this->course->id, $creatorrole->id);
 
         // Add course to config list.
@@ -131,7 +132,7 @@ class render_view_test extends \advanced_testcase {
      * @return void
      * @throws \dml_exception
      */
-    public function test_render_learners_corner_student_view() {
+    public function test_render_learners_corner_student_view(): void {
         $this->resetAfterTest();
         $this->check_installed_plugins($this->pluginslearnerscorner);
 
@@ -156,7 +157,7 @@ class render_view_test extends \advanced_testcase {
      * @return void
      * @throws \dml_exception
      */
-    public function test_render_learners_corner_teacher_view() {
+    public function test_render_learners_corner_teacher_view(): void {
         $this->resetAfterTest();
         $this->check_installed_plugins($this->pluginslearnerscorner);
 
@@ -180,7 +181,7 @@ class render_view_test extends \advanced_testcase {
      * @return void
      * @throws \dml_exception
      */
-    public function test_render_course_dashboard_student_view() {
+    public function test_render_course_dashboard_student_view(): void {
         $this->resetAfterTest();
         $this->check_installed_plugins($this->pluginscoursedashboard);
 
@@ -204,7 +205,7 @@ class render_view_test extends \advanced_testcase {
      * @return void
      * @throws \dml_exception
      */
-    public function test_render_course_dashboard_teacher_view() {
+    public function test_render_course_dashboard_teacher_view(): void {
         $this->resetAfterTest();
         $this->check_installed_plugins($this->pluginscoursedashboard);
 
@@ -229,7 +230,7 @@ class render_view_test extends \advanced_testcase {
      * @return void
      * @throws \dml_exception
      */
-    public function test_render_creators_dashboard_view() {
+    public function test_render_creators_dashboard_view(): void {
         $this->resetAfterTest();
         $this->check_installed_plugins($this->pluginscreatorsdashboard);
         // Set platform.
@@ -249,7 +250,7 @@ class render_view_test extends \advanced_testcase {
      * @return void
      * @throws \dml_exception
      */
-    public function test_render_error_view() {
+    public function test_render_error_view(): void {
         global $OUTPUT;
         $this->resetAfterTest();
 
