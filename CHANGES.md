@@ -1,3 +1,6 @@
+### v1.0.10 - 14.08.2025
+- New/updated translation strings
+
 ### v1.0.9 - 25.10.2024
 - Update for compatibility with Moodle 4.5
 - Adapt README.md
